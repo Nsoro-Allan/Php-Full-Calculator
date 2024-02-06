@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: rgb(49, 120, 220);
+}
+
+.main-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 20px 20px;
+    background: #fff;
+    width: 25%;
+    border-radius: 10px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+form .head{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+form .head input{
+    width: 100%;
+    padding: 20px;
+    border-radius: 50px;
+    border: 2px solid rgb(49, 120, 220);
+    outline-color: rgb(49, 120, 220);
+    float: right;
+}
+
+form .content{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 30px 20px;
+}
+
+form .content button{
+    padding: 20px 10px;
+    border-radius: 10px;
+    width: 20%; 
+    border: none;
+    font-size: 1rem;
+    background: rgb(49, 120, 220);
+    color: #fff;
+    border: 1.5px solid rgb(49, 120, 220);
+    font-weight: 600;
+    transition: all ease-in-out 0.4s;
+}
+form .content button:hover{
+    background: transparent;
+    color: rgb(49, 120, 220);
+    cursor: pointer;
+    border: 1.5px solid rgb(49, 120, 220);
+    transition: all ease-in-out 0.4s;
+}
+
