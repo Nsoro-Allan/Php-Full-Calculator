@@ -7,11 +7,16 @@ if(isset($_POST['button'])) {
         // Append the numeric value to the result
         $_POST['result'] .= $buttonValue;
     }
-     else if($buttonValue == '=') {
+    else if($buttonValue == '=') {
         // Evaluate the expression
-        eval("\$_POST['result'] = " . $_POST['result'] . ";");
+        $expression = $_POST['result'];
+        if (strpos($expression, '/0') !== false) {
+            $_POST['result'] = "Number Can't be divide by zero";
+        } else {
+            eval("\$_POST['result'] = $expression;");
+        }
     }
-     else if($buttonValue == 'C') {
+    else if($buttonValue == 'C') {
         // Clear the result
         $_POST['result'] = '';
 
@@ -21,6 +26,7 @@ if(isset($_POST['button'])) {
     }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -43,7 +49,7 @@ if(isset($_POST['button'])) {
         <form action="" method="post">
 
             <div class="head">
-                <input type="search" name="result" value="<?php echo isset($_POST['result']) ? $_POST['result'] : ''; ?>">
+                <input type="text" name="result" id="result" placeholder="Enter a number..." value="<?php echo isset($_POST['result']) ? $_POST['result'] : ''; ?>" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
             </div><br>
 
             <div class="content">
@@ -63,9 +69,9 @@ if(isset($_POST['button'])) {
                 <button type="submit" name="button" value="3">3</button>
                 <button type="submit" name="button" value="*">×</button>
 
+                <button type="submit" name="button" value="0">0</button>
                 <button type="submit" name="button" value="C">C</button>
                 <button type="submit" name="button" value="/">÷</button>
-                <button type="submit" name="button" value="0">0</button>
                 <button type="submit" name="button" value="=">=</button>
 
             </div>

@@ -75,6 +75,12 @@ form .head input{
     border-radius: 50px;
     border: 2px solid rgb(49, 120, 220);
     outline-color: rgb(49, 120, 220);
+    font-size: 1.2rem;
+}
+
+::placeholder{
+    color: rgb(49, 120, 220);
+    font-weight: 500;
     font-size: 1rem;
 }
 
