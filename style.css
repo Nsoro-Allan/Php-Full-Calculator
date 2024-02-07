@@ -9,19 +9,51 @@ body{
     background: rgb(49, 120, 220);
 }
 
+.main-header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    padding: 20px 20px;
+    background: #fff;
+    width: 28%;
+    border-radius: 10px;
+    margin-top: 2%;
+}
+
+.main-header h1{
+    font-size: 1.5rem;
+    font-style: italic;
+}
+
+.main-header h1 span{
+    color: rgb(49, 120, 220);
+}
+
+.main-header .line{
+    padding: 4px;
+    background: linear-gradient(to right, rgb(49, 120, 220)50%, rgb(0, 0, 0)50%);
+    width: 25%;
+    border-radius: 50px;
+    margin-top: 5px;
+}
+
 .main-container{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%);
     padding: 20px 20px;
     background: #fff;
-    width: 25%;
+    width: 28%;
     border-radius: 10px;
+    margin-top: 10%;
 }
 
 form{
@@ -43,7 +75,7 @@ form .head input{
     border-radius: 50px;
     border: 2px solid rgb(49, 120, 220);
     outline-color: rgb(49, 120, 220);
-    float: right;
+    font-size: 1rem;
 }
 
 form .content{

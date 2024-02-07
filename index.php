@@ -6,12 +6,15 @@ if(isset($_POST['button'])) {
     if (is_numeric($buttonValue)) {
         // Append the numeric value to the result
         $_POST['result'] .= $buttonValue;
-    } elseif ($buttonValue == '=') {
+    }
+     else if($buttonValue == '=') {
         // Evaluate the expression
         eval("\$_POST['result'] = " . $_POST['result'] . ";");
-    } elseif ($buttonValue == 'C') {
+    }
+     else if($buttonValue == 'C') {
         // Clear the result
         $_POST['result'] = '';
+
     } else {
         // Append the operator to the result
         $_POST['result'] .= $buttonValue;
@@ -31,7 +34,8 @@ if(isset($_POST['button'])) {
 <body>
 
     <div class="main-header">
-        <center><h1>Full Calculator</h1></center>
+        <h1>Fu<span>ll</span> Calcula<span>tor</span></h1>
+        <div class="line"></div>
     </div>
 
     <div class="main-container">
@@ -39,8 +43,6 @@ if(isset($_POST['button'])) {
         <form action="" method="post">
 
             <div class="head">
-                <!-- Display the calculation result -->
-
                 <input type="search" name="result" value="<?php echo isset($_POST['result']) ? $_POST['result'] : ''; ?>">
             </div><br>
 
@@ -54,15 +56,15 @@ if(isset($_POST['button'])) {
                 <button type="submit" name="button" value="4">4</button>
                 <button type="submit" name="button" value="5">5</button>
                 <button type="submit" name="button" value="6">6</button>
-                <button type="submit" name="button" value="-">-</button>
+                <button type="submit" name="button" value="-">−</button>
 
                 <button type="submit" name="button" value="1">1</button>
                 <button type="submit" name="button" value="2">2</button>
                 <button type="submit" name="button" value="3">3</button>
-                <button type="submit" name="button" value="*">*</button>
+                <button type="submit" name="button" value="*">×</button>
 
                 <button type="submit" name="button" value="C">C</button>
-                <button type="submit" name="button" value="/">/</button>
+                <button type="submit" name="button" value="/">÷</button>
                 <button type="submit" name="button" value="0">0</button>
                 <button type="submit" name="button" value="=">=</button>
 
