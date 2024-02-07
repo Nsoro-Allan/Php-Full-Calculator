@@ -1,10 +1,8 @@
 <?php
-// Check if any button is clicked
-if (isset($_POST['button'])) {
-    // Get the clicked button value
+if(isset($_POST['button'])) {
+
     $buttonValue = $_POST['button'];
 
-    // Check if it's a numeric button or an operator
     if (is_numeric($buttonValue)) {
         // Append the numeric value to the result
         $_POST['result'] .= $buttonValue;
@@ -31,6 +29,10 @@ if (isset($_POST['button'])) {
     <link rel="shortcut icon" href="./imgs/calculator.ico" type="image/x-icon">
 </head>
 <body>
+
+    <div class="main-header">
+        <center><h1>Full Calculator</h1></center>
+    </div>
 
     <div class="main-container">
 
